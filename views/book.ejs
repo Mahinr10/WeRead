@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>We Read</title>
+    <link rel="stylesheet" href="static/Assets/CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/Assets/CSS/myStyle.css" />
+    <script src="https://kit.fontawesome.com/9b72c8d887.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="banner">
+            <h1 class="text_1">We Read</h1>
+            <p class="myPara">Forever, bound to books!</p>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index">Home </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div class="row extra_margin myRow">
+            <div class="col-sm-3">
+                <img src="static/images/books/book_<%=book.Id%>.jpg" , height="300px" , width="auto" />
+            </div>
+            <div class="col-sm-1">
+
+            </div>
+            <div class="col-sm-8">
+                <h3 class="myPara">Title: <%=book.Title%>
+                </h3>
+                <h4 class="myPara">Author: <%=book.Author%>
+                </h4>
+                <% if(book.Ratting) { %>
+                    <h5 class="myPara">Ratting: <span class="badge badge-primary" style="font-family: calibri">
+                            <%=book.Ratting%> <i class="fa fa-star"></i>
+                        </span></h5>
+                    <%}%>
+                        <br>
+                        <p class="myPara">
+                            <%=book.Description%>
+                        </p>
+
+            </div>
+        </div>
+        <div class="row myRow">
+
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+                <div style="background-color:rgb(243, 233, 219); padding:5px">
+                    <div style="background-color: rgb(207, 220, 245); ">
+                        <h4 class="myPara" style="padding: 10px;">Post Review</h4>
+                    </div>
+                    <form action="post" method="post" id="review">
+                        <label for="review">Review:</label>
+                        <select id="review" name="ratting" required>
+                            <option value="5">5 (Best)</option>
+                            <option value="4">4 (Good)</option>
+                            <option value="3">3 (Average)</option>
+                            <option value="2">2 (Below Average) </option>
+                            <option value="1">1 (Poor)</option>
+                        </select>
+                        <input type="hidden" value="<%=book.Id%>" name="book_id">
+                        <textarea rows="5" , cols="96" name="comment" form="review" required></textarea>
+                        <button class="btn btn-primary" style="background-color: #6C5198;" name="share">Share</button>
+
+                    </form>
+                </div>
+                <br>
+                <% reviews.forEach(review=>{%>
+                    <div style="background-color:rgb(243, 233, 219);">
+                        <div style="background-color: rgb(207, 220, 245); ">
+                            <h4 class="myPara" style="padding: 10px;">
+                                <%=review.Name%> <span class="badge badge-primary" style="font-family: calibri">
+                                        <%for(let i=0; i < review.Ratting; i++){%>
+                                            <i class="fa fa-star"></i>
+                                            <%}%>
+                                                <%for(let i=review.Ratting; i < 5; i++){%>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <%}%>
+                                    </span>
+                            </h4>
+                        </div>
+                        <p class="myPara" style="padding:10px">
+                            <%=review.Comment%>
+                        </p>
+                    </div>
+                    <%})%>
+
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>We Read</title>
+    <link rel="stylesheet" href="static/Assets/CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/Assets/CSS/myStyle.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="banner">
+            <h1 class="text_1">We Read</h1>
+            <p class="myPara">Forever, bound to books!</p>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/index">Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <% let index=0 %>
+            <% data.forEach(book=>{ %>
+                <% if(index % 4==0) { %>
+                    <div class="row myRow">
+                        <% } %>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img class="card-image-top" src="static/images/books/book_<%=book.Id%>.jpg"
+                                        alt="Book Image 1" height="300px" width="auto" />
+                                    <div class="card-body">
+                                        <h4 class="myPara">
+                                            <%=book.Title%>
+                                        </h4>
+                                        <h5 class="myPara">Author: <%=book.Author%>
+                                        </h5>
+                                        <% if(book.Ratting){ %>
+                                            <h6 class="myPara">Ratting: <%=book.Ratting%>
+
+                                            </h6>
+                                            <% } %>
+                                                <form method="post" action="/book">
+                                                    <input type="hidden" value="<%=book.Id%>" name="Id">
+                                                    <input type="hidden" value="<%=book.Title%>" name="Title">
+                                                    <input type="hidden" value="<%=book.Author%>" name="Author">
+                                                    <input type="hidden" value="<%=book.Ratting%>" name="Ratting">
+                                                    <input type="hidden" value="<%=book.Description%>"
+                                                        name="Description">
+                                                    <input type="submit" name="submit" value="Details"
+                                                        class="btn btn-primary myPara">
+                                                </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <% if((index + 1) % 4==0) { %>
+                    </div>
+                    <% } %>
+                        <% index++ %>
+                            <%})%>
+    </div>
+</body>
+
+</html>

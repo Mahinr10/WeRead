@@ -1,0 +1,100 @@
+div.banner {
+  background-color: #d6eaf8;
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: "MV Boli";
+}
+
+div.login {
+  background-color: #d4e6f1;
+  margin-top: 80px;
+  font-family: "Comic Sans MS";
+  padding: 30px;
+  border-radius: 10px;
+  border-color: black;
+}
+
+div.navbar {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.text_1 {
+  font-family: "MV Boli";
+  text-shadow: 2px 2px 3px black;
+}
+
+.text_center {
+  text-align: center;
+}
+
+span.banner {
+  background-color: #d4efdf;
+  padding: 5px;
+}
+
+.myPara {
+  font-family: "Comic Sans MS";
+}
+
+input.myInputBar {
+  width: 100%;
+}
+
+button.cbtn {
+  margin-left: 40%;
+}
+
+div.myRow {
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 180px;
+  height: auto;
+  display: block;
+}
+
+.profile_pic_box {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.btn_center {
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.extra_margin {
+  margin-top: 10px;
+}
+
+.all_margin {
+  margin: 10px;
+}
+
+div.info_bar {
+  padding: 20px;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.add_border {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.add_padding {
+  padding: 20px;
+}

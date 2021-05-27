@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>We Read</title>
+    <link rel="stylesheet" href="static/Assets/CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/Assets/CSS/myStyle.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="banner">
+            <h1 class="text_1">We Read</h1>
+            <p class="myPara">Forever, Bound to Books!</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 login">
+                <h2 class="text_1 text_center">Login</h2>
+                <br />
+                <form method="POST" action="/login">
+                    <label for="email"> Email </label>
+                    <br />
+                    <input type="text" name="email" class="myInputBar" required />
+                    <br />
+                    <label for="password">Password</label>
+                    <br />
+                    <input type="password" name="password" class="myInputBar" required />
+                    <br /><br />
+                    <button class="btn btn-primary cbtn">Login</button>
+                    <br /><br />
+                    <p>
+                        If you don't have any account then Sign up
+                        <a href="signup.html">here.</a>
+                    </p>
+                </form>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</body>
+
+</html>
